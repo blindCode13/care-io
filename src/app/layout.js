@@ -1,7 +1,7 @@
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/shared/Navbar";
-import Footer from "./components/shared/Footer";
+import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/Footer";
 
 const poppins = Poppins({
   weight: '400'
