@@ -12,6 +12,10 @@
     @apply bg-(--primary-color) px-6 py-2 rounded-md cursor-pointer text-white hover:scale-105 transition;
   }
 
+  .btn-secondery {
+    @apply bg-white border-2 border-(--primary-color) px-6 py-2 rounded-md cursor-pointer text-(--primary-color) hover:scale-105 transition;
+  }
+
   .p-top { @apply pt-28; }
 
   .global-px { @apply px-6 md:px-12; }

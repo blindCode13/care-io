@@ -1,7 +1,7 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
+import { ToastContainer } from "react-toastify";
+import AuthProvider from "@/provider/AuthProvider";
 
 const poppins = Poppins({
   weight: '400'
@@ -15,15 +15,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.className} antialiased`}
-      >
-        <div className="max-w-480 mx-auto">
-          <Navbar></Navbar>
-          <div className="min-h-[calc(100vh-330px)]">
+      <body className={`${poppins.className} antialiased`}>
+        <div>
+          <AuthProvider>
             {children}
-          </div>
-          <Footer></Footer>
+          </AuthProvider>
+          <ToastContainer />
         </div>
       </body>
     </html>
