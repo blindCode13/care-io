@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 const ServiceCard = ({ service }) => {
-  const { category, service: serviceName, basePrice, unit } = service;
+  const { _id, category, service: serviceName, basePrice, unit } = service;
 
   return (
     <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-md transition">
@@ -25,7 +25,7 @@ const ServiceCard = ({ service }) => {
         </p>
 
         <Link
-          href={`/services`}
+          href={`/service/${_id}`}
           className="btn-primary"
         >
           View Details

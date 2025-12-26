@@ -45,8 +45,13 @@ const Register = () => {
 				};
 				const result = await registerUser(userData);
 
-				if (result?.acknowledged) 
-					toast.success("User registered successfully.");
+				if (result?.acknowledged) {
+					const userData = {email, password};
+        			const result = await signIn("credentials", {...userData, redirect: false});
+
+        			if (!result.ok) return toast.error("Your account is registered but failed to login.");
+        			toast.success("Your account has been registered.");
+				}
 				 else 
 					toast.error("Failed to register the user");
 				

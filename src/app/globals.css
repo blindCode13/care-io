@@ -13,7 +13,7 @@
   }
 
   .btn-secondery {
-    @apply bg-white border-2 border-(--primary-color) px-6 py-2 rounded-md cursor-pointer text-(--primary-color) hover:scale-105 transition;
+    @apply bg-white border-2 border-(--primary-color) px-6 py-2 rounded-md cursor-pointer text-(--primary-color) hover:scale-105 transition text-center;
   }
 
   .p-top { @apply pt-28; }
