@@ -23,7 +23,7 @@ export default function Home() {
 						</div>
 
 						{/* CTA */}
-						<Link href="/" className="btn-primary px-8 py-4 text-lg">
+						<Link href="/service" className="btn-primary px-8 py-4 text-lg">
 							Book a Service
 						</Link>
 
@@ -131,7 +131,7 @@ export default function Home() {
 								<p className="text-gray-600 mb-4 leading-relaxed">
 									Trusted babysitting and child care services to ensure safety, comfort, and proper attention for your little ones.
 								</p>
-								<Link href="/service/baby-care" className="inline-flex items-center text-sm font-medium text-(--primary-color) hover:underline">
+								<Link href="/service?filter=Baby Care" className="inline-flex items-center text-sm font-medium text-(--primary-color) hover:underline">
 									View Services →
 								</Link>
 							</div>
@@ -146,7 +146,7 @@ export default function Home() {
 								<p className="text-gray-600 mb-4 leading-relaxed">
 									Compassionate support for elderly family members, helping them live comfortably and safely in their own homes.
 								</p>
-								<Link href="/service/elderly-care" className="inline-flex items-center text-sm font-medium text-(--primary-color) hover:underline">
+								<Link href="/service?filter=Elderly Care" className="inline-flex items-center text-sm font-medium text-(--primary-color) hover:underline">
 									View Services →
 								</Link>
 							</div>
@@ -161,7 +161,7 @@ export default function Home() {
 								<p className="text-gray-600 mb-4 leading-relaxed">
 									Home care services for sick or recovering individuals who need dedicated attention, assistance, and comfort.
 								</p>
-								<Link href="/service/sick-care" className="inline-flex items-center text-sm font-medium text-(--primary-color) hover:underline">
+								<Link href="/service?filter=Sick People Care" className="inline-flex items-center text-sm font-medium text-(--primary-color) hover:underline">
 									View Services →
 								</Link>
 							</div>
