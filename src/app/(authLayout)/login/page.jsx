@@ -5,7 +5,7 @@ import { useState } from "react";
 import { LuEye } from "react-icons/lu";
 import { LuEyeClosed } from "react-icons/lu";
 import { FcGoogle } from "react-icons/fc";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { toast } from "react-toastify";
 import Loading from "@/app/loading";
@@ -15,6 +15,8 @@ const Login = () => {
   const [passwordError, setPasswordError] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
   const router = useRouter();
+  const searchParams = useSearchParams();
+  let callback = searchParams.get('callback');
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,6 +32,7 @@ const Login = () => {
 
         if (!result.ok) return toast.error("Email or password is incorrect. Please try again.");
         toast.success("Successfully logged in");
+        window.location.href = callback ? callback : "/";
       }
       catch (err) {
         toast.error(err.message);

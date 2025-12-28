@@ -1,10 +1,7 @@
 
 import { getServices } from "@/actions/server/services";
 import BookingForm from "@/components/bookingForm";
-import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
-
-// Mock logged-in user (replace with session later)
 
 
 export default async function BookingPage({ params }) {

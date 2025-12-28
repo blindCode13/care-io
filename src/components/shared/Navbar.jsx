@@ -30,7 +30,7 @@ const Navbar = () => {
             </div>
             <div className="flex items-center gap-4 text-(--primary-color)">
                 {
-                    session.status === 'authenticated' && <MdOutlineLibraryBooks size={38} className="cursor-pointer" title="my-bookings"/>
+                    session.status === 'authenticated' && <Link href="/my-bookings"><MdOutlineLibraryBooks size={38} className="cursor-pointer" title="my-bookings"/></Link>
                 }
                 <div className="cursor-pointer" onClick={() => setShowDropDown(!showDropDown)}>
                 {

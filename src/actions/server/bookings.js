@@ -19,3 +19,12 @@ export async function postBooking(data) {
         insertedId: result?.insertedId.toString()
     }
 }
+
+export async function getBookings(userEmail) {
+    if (!userEmail) return [];
+    if (!userEmail.includes('@') || !userEmail.includes('.')) {
+        return []
+    }
+    const result = await dbConnect('bookings').find({customerEmail: userEmail}).toArray();
+    return result;
+}

@@ -4,8 +4,8 @@ import { postBooking } from '@/actions/server/bookings';
 import Loading from '@/app/loading';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
 const BookingForm = ({data}) => {
@@ -16,6 +16,15 @@ const BookingForm = ({data}) => {
     const [isProcessing, setIsProcessing] = useState(false);
     let total;
     const router = useRouter();
+    const pathname = usePathname();
+    
+    useEffect(() => {
+        if (session.status === 'unauthenticated') {
+            router.push(`/login?callback=${pathname}`);
+        }
+    }, [session.status, router, pathname]);
+
+    if (isProcessing || session.status !== 'authenticated') return <Loading />
 
     if (service.unit === 'hour') {
         total = service.basePrice * duration;
@@ -62,8 +71,6 @@ const BookingForm = ({data}) => {
             router.push("/")
         }
     }
-
-    if (isProcessing) return <Loading />
 
     return (
         <section className="min-h-screen p-top">

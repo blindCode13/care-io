@@ -1,4 +1,5 @@
 "use client";
+
 import {FaSignOutAlt} from 'react-icons/fa';
 import {toast} from 'react-toastify';
 
@@ -29,7 +30,8 @@ const LogoutConfirmation = ({setShowModal, logOut}) => {
 							onClick={() => {
                                 logOut().then(() => {
                                     setShowModal(false);
-                                    toast.success("Logged out successfully")
+                                    toast.success("Logged out successfully");
+									window.location.href = "/"
                                 })
                                 .catch(err => toast.error(err.message));
                                 }}>
