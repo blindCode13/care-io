@@ -73,7 +73,7 @@ const BookingForm = ({data}) => {
     }
 
     return (
-        <section className="min-h-screen p-top">
+        <section className="p-top mb-20">
       <div className="max-w-4xl mx-auto px-6">
 
         {/* Service Info */}

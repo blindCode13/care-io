@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Logo from "../Logo";
 
 const Footer = () => {
@@ -22,10 +23,15 @@ const Footer = () => {
               Useful Links
             </h4>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li className="hover:text-(--primary-color) cursor-pointer">Home</li>
-              <li className="hover:text-(--primary-color) cursor-pointer">Services</li>
-              <li className="hover:text-(--primary-color) cursor-pointer">Pricing</li>
-              <li className="hover:text-(--primary-color) cursor-pointer">Contact</li>
+              <li className="hover:text-(--primary-color) cursor-pointer">
+                <Link href="/">Home</Link>
+              </li>
+              <li className="hover:text-(--primary-color) cursor-pointer">
+                <Link href="/service">Service</Link>
+              </li>
+              <li className="hover:text-(--primary-color) cursor-pointer">
+                <Link href="/contact">Contact</Link>
+              </li>
             </ul>
           </div>
 
@@ -61,7 +67,7 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="mt-10 pt-6 border-t border-gray-300 flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500 gap-4">
-          <p>© 2024 Care.xyz. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Care.Io. All rights reserved.</p>
           <p>Built with care and trust.</p>
         </div>
       </div>

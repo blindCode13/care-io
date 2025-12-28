@@ -13,7 +13,7 @@ export default async function ServiceDetailsPage({ params }) {
     <>
         {
             service && 
-            <section className="min-h-screen p-top">
+            <section className="mb-10 p-top">
       <div className="max-w-3xl mx-auto px-6">
 
         {/* Main Card */}

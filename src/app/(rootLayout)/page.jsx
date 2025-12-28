@@ -1,5 +1,33 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Care.io | Trusted Home Care for Your Loved Ones",
+  description:
+    "Care.io provides trusted, compassionate home care services for children, elders, and sick family members. Book reliable caregivers easily and securely.",
+  keywords: [
+    "home care services",
+    "baby care",
+    "elderly care",
+    "sick people care",
+    "caregiver booking",
+    "home caregiving",
+  ],
+  openGraph: {
+    title: "Care.io | Trusted Home Care",
+    description:
+      "Reliable, compassionate care for children, elders, and family members—right where they feel safest: at home.",
+    type: "website",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Care.io | Trusted Home Care",
+    description:
+      "Book trusted caregivers for baby care, elderly care, and recovery support at home.",
+  },
+};
+
+
 export default function Home() {
 	return (
 		<div className="p-top global-px">

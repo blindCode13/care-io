@@ -5,7 +5,7 @@ import { useState } from "react";
 import { LuEye } from "react-icons/lu";
 import { LuEyeClosed } from "react-icons/lu";
 import { FcGoogle } from "react-icons/fc";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { toast } from "react-toastify";
 import Loading from "@/app/loading";
@@ -14,7 +14,6 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [passwordError, setPasswordError] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
-  const router = useRouter();
   const searchParams = useSearchParams();
   let callback = searchParams.get('callback');
   
@@ -58,7 +57,9 @@ const Login = () => {
         <button
           type="button"
           className="absolute top-6 left-6 flex items-center gap-2 text-sm text-(--primary-color) hover:underline cursor-pointer"
-          onClick={() => router.back()}
+          onClick={() => {
+            callback ? window.history.go(-2) : window.history.go(-1)
+          }}
         >← Go Back
         </button>
 

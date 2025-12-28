@@ -11,7 +11,7 @@ const RootLayout = ({children}) => {
 	return (
 		<div className="max-w-480 mx-auto">
 			<Navbar></Navbar>
-			<div className="min-h-[calc(100vh-330px)]">
+			<div className="min-h-[calc(100vh-300px)]">
 				{children}
             </div>
 			<Footer></Footer>
