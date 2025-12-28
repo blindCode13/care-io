@@ -19,6 +19,20 @@ const Navbar = () => {
         {
             showModal && <LogoutConfirmation setShowModal={setShowModal} logOut={signOut}/>
         }
+        {
+            showDropDown && 
+                <ul className="fixed w-full bg-white top-20 flex md:hidden border-2 border-x-0 border-y-gray-200 flex-col items-center gap-5 z-50 py-6">
+                    <li><Navlink to="/">Home</Navlink></li>
+                    <li><Navlink to="/service">Service</Navlink></li>
+                    <li><Navlink to="/contact">Contact</Navlink></li>
+                    <li>
+                        {
+                session.status === 'authenticated' ? <button className="btn-primary" onClick={() => setShowModal(true)}>Log Out</button> :
+                <Link href="/login" className="btn-primary">Login</Link>
+                }
+                    </li>
+                </ul>
+        }
         <div className="fixed w-full flex items-center justify-between global-px py-4 shadow-sm bg-white max-w-480 z-50">
             <div className="flex items-center justify-center gap-12">
                 <Logo></Logo>
@@ -34,7 +48,7 @@ const Navbar = () => {
                 }
                 <div className="cursor-pointer" onClick={() => setShowDropDown(!showDropDown)}>
                 {
-                    showDropDown ? <IoClose size={38}/> : <CgMenuRightAlt size={38} className="flex md:hidden"/>
+                    showDropDown ? <IoClose size={38} className="flex md:hidden"/> : <CgMenuRightAlt size={38} className="flex md:hidden"/>
                 }
                 </div>
                 {
